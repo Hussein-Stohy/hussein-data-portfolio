@@ -1,0 +1,139 @@
+<div class="min-h-screen bg-slate-50" *ngIf="portfolioData$ | async as data; else loading">
+  <!-- Header Section -->
+  <header class="bg-gradient-to-r from-azure-700 to-azure-600 text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-5xl font-bold mb-4">{{ data.name }}</h1>
+      <p class="text-xl mb-2">{{ data.title }}</p>
+      <p class="text-lg opacity-90">{{ data.location }}</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-12 max-w-4xl">
+    <!-- Career Objective -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-2 border-azure-500 pb-2">Career Objective</h2>
+      <p class="text-lg text-slate-700 leading-relaxed">{{ data.careerObjective }}</p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-2 border-azure-500 pb-2">Technical Skills</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div *ngFor="let skillGroup of data.technicalSkills" class="bg-white p-6 rounded-lg shadow-soft">
+          <h3 class="text-xl font-semibold text-azure-700 mb-4">{{ skillGroup.category }}</h3>
+          <ul class="space-y-2">
+            <li *ngFor="let skill of skillGroup.skills" class="flex items-center">
+              <span class="w-2 h-2 bg-azure-500 rounded-full mr-3"></span>
+              {{ skill }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-2 border-azure-500 pb-2">Training</h2>
+      <div class="bg-white p-6 rounded-lg shadow-soft">
+        <div *ngFor="let training of data.training">
+          <h3 class="text-xl font-semibold text-azure-700 mb-2">{{ training.organization }}</h3>
+          <p class="text-slate-600 mb-2">{{ training.track }} - {{ training.status }}</p>
+          <ul class="list-disc list-inside text-slate-700 space-y-1">
+            <li *ngFor="let detail of training.details">{{ detail }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-2 border-azure-500 pb-2">Experience</h2>
+      <div class="space-y-6">
+        <div *ngFor="let exp of data.experience" class="bg-white p-6 rounded-lg shadow-soft">
+          <h3 class="text-xl font-semibold text-azure-700 mb-2">{{ exp.role }}</h3>
+          <p class="text-slate-600 mb-2">{{ exp.company }} - {{ exp.type || exp.location }}</p>
+          <p class="text-sm text-slate-500 mb-4">{{ exp.period }}</p>
+          <ul class="list-disc list-inside text-slate-700 space-y-1">
+            <li *ngFor="let detail of exp.details">{{ detail }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-2 border-azure-500 pb-2">Projects</h2>
+      <div class="space-y-6">
+        <div *ngFor="let project of data.projects" class="bg-white p-6 rounded-lg shadow-soft">
+          <h3 class="text-xl font-semibold text-azure-700 mb-4">{{ project.name }}</h3>
+          <ul class="list-disc list-inside text-slate-700 space-y-1">
+            <li *ngFor="let detail of project.details">{{ detail }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-2 border-azure-500 pb-2">Education</h2>
+      <div class="bg-white p-6 rounded-lg shadow-soft">
+        <div *ngFor="let edu of data.education">
+          <h3 class="text-xl font-semibold text-azure-700 mb-2">{{ edu.degree }}</h3>
+          <p class="text-slate-600 mb-2">{{ edu.institution }}, {{ edu.location }}</p>
+          <p class="text-sm text-slate-500 mb-4">Expected: {{ edu.expected }}</p>
+          <p class="text-slate-700"><strong>Relevant Coursework:</strong> {{ edu.coursework.join(', ') }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-slate-800 mb-6 border-b-2 border-azure-500 pb-2">Languages</h2>
+      <div class="bg-white p-6 rounded-lg shadow-soft">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div *ngFor="let lang of data.languages" class="flex justify-between">
+            <span class="font-medium text-slate-700">{{ lang.language }}</span>
+            <span class="text-slate-600">{{ lang.proficiency }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer / Contact -->
+  <footer class="bg-slate-900 text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div>
+          <p class="font-semibold mb-2">Phone</p>
+          <p>{{ data.phone }}</p>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">Email</p>
+          <p>{{ data.email }}</p>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">GitHub</p>
+          <a href="{{ data.github }}" target="_blank" class="text-azure-400 hover:text-azure-300">{{ data.github }}</a>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">LinkedIn</p>
+          <a href="{{ data.linkedin }}" target="_blank" class="text-azure-400 hover:text-azure-300">{{ data.linkedin
+            }}</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<ng-template #loading>
+  <div class="min-h-screen bg-slate-50 flex items-center justify-center">
+    <div class="text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-azure-500 mx-auto mb-4"></div>
+      <p class="text-slate-600">Loading portfolio...</p>
+      <p *ngIf="errorMessage" class="text-red-500 mt-4">{{ errorMessage }}</p>
+    </div>
+  </div>
+</ng-template>

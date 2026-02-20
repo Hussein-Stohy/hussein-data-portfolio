@@ -1,0 +1,74 @@
+{
+  "name": "Hussein Mohamed",
+  "title": "Junior Data Engineer – Microsoft Azure",
+  "location": "El Fayoum, Egypt",
+  "phone": "+20 107 067 8595",
+  "email": "husseinstohy@gmail.com",
+  "github": "https://github.com/Hussein-Stohy",
+  "linkedin": "https://www.linkedin.com/in/hussein-stohy",
+  "careerObjective": "Aspiring Data Engineer enrolled in the AI & Data Science – Microsoft Data Engineer track under the Digital Egypt Pioneers Initiative. Seeking an entry-level or internship role to apply skills in SQL, Python, data pipelines, and Microsoft Azure to build scalable and reliable data solutions.",
+  "technicalSkills": [
+    { "category": "Programming", "skills": ["Python", "SQL"] },
+    { "category": "Data Engineering", "skills": ["ETL/ELT Pipelines", "Data Modeling", "Big Data Fundamentals", "Data Processing"] },
+    { "category": "Cloud", "skills": ["Microsoft Azure (Data Engineering Concepts)"] },
+    { "category": "DevOps", "skills": ["Deployment Fundamentals", "CI/CD Concepts", "Git"] },
+    { "category": "Databases", "skills": ["Relational Databases", "Query Optimization"] }
+  ],
+  "training": [
+    {
+      "organization": "Digital Egypt Pioneers Initiative (DEPI)",
+      "track": "AI & Data Science Track – Microsoft Data Engineer",
+      "status": "Ongoing",
+      "details": [
+        "Studying data engineering using Microsoft tools and cloud platforms",
+        "Designing data pipelines and preparing datasets for analytics and AI workloads",
+        "Covering SQL optimization, advanced Python, big data processing, and deployment concepts"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Front-End Developer",
+      "company": "QuaNode Company",
+      "type": "Part-time, Remote",
+      "period": "Jul 2025 – Present",
+      "details": [
+        "Built reusable UI components using Angular and TypeScript, following clean and modular architecture",
+        "Worked in a remote Agile environment using Git and task management tools"
+      ]
+    },
+    {
+      "role": "Back-End Developer Intern",
+      "company": "ECPA Company",
+      "location": "Cairo",
+      "period": "Jun 2024 – Sep 2024",
+      "details": [
+        "Optimized SQL Server queries, strengthening practical experience in query optimization and data handling",
+        "Developed RESTful APIs using Node.js and Express.js"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Capstone Project – Data Engineering Solution",
+      "details": [
+        "Designed an end-to-end data pipeline using Python and SQL",
+        "Cleaned, transformed, and prepared raw data for analytics",
+        "Applied Microsoft Azure data engineering concepts for deployment readiness"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Computer Science",
+      "institution": "Culture and Science City",
+      "location": "October, Egypt",
+      "expected": "June 2026",
+      "coursework": ["Advanced Databases", "Software Engineering", "Web Development"]
+    }
+  ],
+  "languages": [
+    { "language": "Arabic", "proficiency": "Native" },
+    { "language": "English", "proficiency": "Professional Working Proficiency" }
+  ]
+}
